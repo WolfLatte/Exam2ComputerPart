@@ -61,23 +61,39 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ##############################################################################
-def house(): 
-    height = height + 4
+#     height = height + 4
+#     mult = 0
+#     if height % 2 == 1:
+#         mult = 1
+#     for y in range(height, 0, -width+2):
+#         print(" " * (y) + "* " * (height-mult-y))
+# def box(height, width):
+#     if height < 3 or width < 3:
+#         print("Invalid Box Size")
+#         return
+    
+#     for x in range(height):
+#         if x == height - 1:
+#             print("*" * width)
+#         else:
+#             print("*" + " " * (width - 2) + "*")
+def triangle(height, width):
+    width = width + 4
     mult = 0
-    if height % 2 == 1:
+    if width % 2 == 1:
         mult = 1
-    for y in range(height, 0, -width+2):
-        print(" " * (y) + "* " * (height-mult-y))
+    for y in range(width, 0, -height+2):
+        print(" " * (y) + "* " * (width-mult-y))
 def box(height, width):
-    if height < 3 or width < 3:
+    if height < 2 or width < 3:
         print("Invalid Box Size")
         return
-    
+
     for x in range(height):
         if x == height - 1:
-            print("*" * width)
+            print(" " * width + "*" * width)
         else:
-            print("*" + " " * (width - 2) + "*")
+            print(" " * width + "" + "*" * (width - 2) + "*")
 
-# Test the function
-box(5, 7)
+triangle(4,6)
+box(4,6)
