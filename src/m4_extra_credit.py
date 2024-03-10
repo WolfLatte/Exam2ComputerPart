@@ -93,7 +93,7 @@ def box(height, width):
         if x == height - 1:
             print(" " * width + "*" * width)
         else:
-            print(" " * width + "" + "*" * (width - 2) + "*")
+            print(" " * width + "*" + " " * (width - 2) + "*")
 
 triangle(4,6)
 box(4,6)
