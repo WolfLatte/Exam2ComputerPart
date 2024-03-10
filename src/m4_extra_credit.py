@@ -60,4 +60,24 @@
 #       "Invalid dimensions!"
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
-###############################################################################
+##############################################################################
+def house(): 
+    height = height + 4
+    mult = 0
+    if height % 2 == 1:
+        mult = 1
+    for y in range(height, 0, -width+2):
+        print(" " * (y) + "* " * (height-mult-y))
+def box(height, width):
+    if height < 3 or width < 3:
+        print("Invalid Box Size")
+        return
+    
+    for x in range(height):
+        if x == height - 1:
+            print("*" * width)
+        else:
+            print("*" + " " * (width - 2) + "*")
+
+# Test the function
+box(5, 7)

@@ -13,7 +13,9 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def get_toy():
+    toy = input("Please enter a toy: ")
+    return toy
 ###############################################################################
 # TODO: 2. (3 pts)
 #
@@ -26,7 +28,9 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def get_price():
+    price = float(input("Please enter a price: "))
+    return price
 ###############################################################################
 # TODO: 3. (5 pts)
 ##
@@ -43,7 +47,9 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def toy_price(toy, price):
+    toy_tuple = (toy, price)
+    return toy_tuple
 ###############################################################################
 # TODO: 4. (5 pts)
 #
@@ -61,7 +67,11 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def calculate_total_price(toys):
+    total_cost = 0.0
+    for toy, price in toys:
+        total_cost += price
+    return total_cost
 ###############################################################################
 # TODO: 5. (8 pts)
 #
@@ -89,3 +99,21 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+    toys_list = []
+    while True:
+        toy = get_toy()
+        if toy.lower() == "end":
+            break
+        price = get_price()
+        if price == "end":
+            break
+        toys_list.append(toy_price(toy, price))
+
+    for toy_tuple in toys_list:
+        print(toy_tuple)
+
+    total_cost = calculate_total_price(toys_list)
+    print("Total Cost: $", total_cost)
+
+main()

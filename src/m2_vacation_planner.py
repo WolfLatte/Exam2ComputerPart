@@ -28,7 +28,18 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def starter_list(vacation_type):
+    match vacation_type.lower():
+        case "beach":
+            return ["swimsuit", "towel", "sunglasses"]
+        case "forrest":
+            return ["hiking boots", "water bottle", "jacket"]
+        case "city":
+            return ["wallet", "shoes", "camera"]
+        case _:
+            return []
+        
+print(starter_list("city"))
 ###############################################################################
 # TODO: 2. (4 pts)
 #
@@ -48,6 +59,18 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def gather_items():
+    items = []
+    while True:
+        item = input("Please enter an item: ")
+        if item.lower() == "end":
+            break
+        items.append(item)
+    return items
+
+
+
+
 
 ###############################################################################
 # TODO: 3. (6 pts)
@@ -76,3 +99,19 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+    print("Welcome to the Vacation Planner!")
+    vacation_type = input("Please enter your vacation type: ")
+    print("Items based on vacation type:")
+    for item in starter_list(vacation_type):
+        print(item)
+    
+    user_items = gather_items()
+    
+    combined_list = starter_list(vacation_type) + user_items
+    print("Your complete packing list:")
+    for item in combined_list:
+        print(item)
+    print("Enjoy your vacation!")
+
+main()
